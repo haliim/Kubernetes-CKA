@@ -1,3 +1,4 @@
+#kubectl create/apply -f template.yaml 
 apiVersion: v1 / apps/v1
 kind: Pod / Service / ReplicaSet / Deployment
 metadata:

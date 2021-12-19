@@ -1,0 +1,24 @@
+apiVersion: apps/v1 
+kind: ReplicaSet
+metadata:
+  name: replicaset
+  labels:
+    app: myapp-rc
+spec:
+  template: # Under template copy all Pod definition except for apiVersion and kind
+    metadata:
+      name: ReplicaSet
+      labels:
+        app: kasnxa
+        tier: front
+        type: prod
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
+        - name: busybox
+          image: busybox:latest
+  replicas: 5
+  selector:
+    matchLabels:
+      type: prod
