@@ -4,3 +4,4 @@ kubectl replace
 kubectl describe
 kubectl edit
 kubectl scale replicaset name --replicas=2
+kubectl rollout status deployment/myappdeployment

@@ -1,0 +1,22 @@
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  name: myappdeployment
+  labels:
+    app: myapp-Deployment
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      type: prod
+  template: # Under template copy all Pod definition except for apiVersion and kind
+    metadata:
+      name: myappdeployment
+      labels:
+        app: kasnxa
+        tier: front
+        type: prod
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
