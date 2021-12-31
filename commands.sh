@@ -4,9 +4,7 @@ kubectl replace
 kubectl describe
 kubectl edit
 kubectl scale replicaset name --replicas=2
-<<<<<<< HEAD
 kubectl rollout status deployment/myappdeployment
-=======
 
 #===================
 Deployments Commands
@@ -18,4 +16,12 @@ kubectl set image deployment/myapp-deployment nginx=nginx:1.7.1
 kubectl rollout status deployment/myapp-deployment
 kubectl rollout history deployment/myapp-deployment
 kubectl rollout undo deployment/myapp-deployment
->>>>>>> 4867db2d85d1a4d4af6a22ad37ef571dce483e52
+
+#=======================
+Namespace Commands
+kubectl get pods --namespace=xxx
+kubectl get pods --all-namespaces
+ubectl create -f file.yaml --namespace=xxx # or you can add namspace under metadata section
+kubectl create namespace xxx
+kubectl config set-context $(kubectl config current-context) --namespace=dev
+

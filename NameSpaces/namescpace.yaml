@@ -1,0 +1,4 @@
+apiVersion: v1
+Kind: namespace
+metadata:
+  name: dev
