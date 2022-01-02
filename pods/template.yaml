@@ -13,3 +13,10 @@ spec:
       image: nginx #Please write the full name of the container in case it's not hosted in docker and also you need to write down the version ex: nginx:latest
     - name: busybox
       image: busybox:latest
+  tolerations:
+    - key: "app"
+      operator: "="
+      value: "blue"
+      effect: "NoSchedule"
+  nodeSelector:
+    size: large
