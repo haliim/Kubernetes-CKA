@@ -20,3 +20,13 @@ spec:
       effect: "NoSchedule"
   nodeSelector:
     size: large
+  affinity:
+    nodeAffinity:
+      required DuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: size
+            operator: In / NotIn / Exists
+            values:
+            - Large
+            - small
