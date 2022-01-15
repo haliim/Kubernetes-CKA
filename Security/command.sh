@@ -18,6 +18,17 @@ kubectl logs etcd-master
 docker ps -a
 docker logs <container ID>
 #==========
-kubectl get certificatesigningrequests.certificates.k8s.io akshay
-kubectl certificate approve akshay
-    
+kubectl get certificatesigningrequests.certificates.k8s.io <certificate name>
+kubectl certificate approve <certificate name>
+kubectl config view
+kubectl config --kubeconfig=/root/my-kube-config use-context <user group>@<cluster name>    #Specify kubeconfig location if it's not the default location
+kubectl config current-context --kubeconfig <config file name and directory>
+#==================
+#APIs
+kubectl proxy
+#===================
+#RBAC
+kubectl get roles
+kubectl get rolebindings
+kubectl describe role <role name>
+kubectl auth can-i <create deployments> --as <dev user> 
