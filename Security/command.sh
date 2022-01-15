@@ -31,4 +31,7 @@ kubectl proxy
 kubectl get roles
 kubectl get rolebindings
 kubectl describe role <role name>
-kubectl auth can-i <create deployments> --as <dev user> 
+kubectl auth can-i <create deployments> --as <dev user>
+#Example:
+kubectl create role developer --resource=pods --verb=list,create,delete
+kubectl create rolebinding dev-user-binding --role=developer --user=dev-user

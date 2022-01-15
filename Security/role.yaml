@@ -10,3 +10,5 @@ rules:
 - apiGroups: [""]
   resources: ["ConfigMap"]
   verbs: ["create"]
+
+  #kubectl create role developer --resource=pods --verb=list,create,delete
