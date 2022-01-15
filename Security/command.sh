@@ -17,3 +17,7 @@ journalctl -u etcd.service -l
 kubectl logs etcd-master
 docker ps -a
 docker logs <container ID>
+#==========
+kubectl get certificatesigningrequests.certificates.k8s.io akshay
+kubectl certificate approve akshay
+    
