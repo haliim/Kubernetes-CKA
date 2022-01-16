@@ -29,7 +29,7 @@ kubectl proxy
 #===================
 #RBAC
 kubectl get roles
-kubectl get rolebindings
+kubectl get rolebindings #--no-headers | wc -l
 kubectl describe role <role name>
 kubectl auth can-i <create deployments> --as <dev user>
 #Example:
