@@ -43,3 +43,13 @@ kubectl get serivceaccount
 kubectl describe serivceaccount <name>
 kubectl exec -it <pod name> ls /var/run/secrets/kubernetes.io/serivceaccount
 
+#===============
+#Image security
+docker login <private-registry.io>  #will request username and password
+docker run <private-registry.io/apps/internal-app>
+kubectl create secret <docker registry> <secret-name> \
+    --docker-server=
+    --docker-username=
+    --docker-password=
+    --docker-email=
+
