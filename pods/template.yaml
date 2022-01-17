@@ -8,6 +8,7 @@ metadata:
     tier: front
     type: prod
 spec:
+  serviceAccountName: "service-account"
   containers:
     - name: nginx
       image: nginx #Please write the full name of the container in case it's not hosted in docker and also you need to write down the version ex: nginx:latest

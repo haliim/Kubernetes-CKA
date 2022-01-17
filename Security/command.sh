@@ -35,3 +35,11 @@ kubectl auth can-i <create deployments> --as <dev user>
 #Example:
 kubectl create role developer --resource=pods --verb=list,create,delete
 kubectl create rolebinding dev-user-binding --role=developer --user=dev-user
+
+#=================
+#Service accounts
+kubectl create serivceaccount <name>
+kubectl get serivceaccount
+kubectl describe serivceaccount <name>
+kubectl exec -it <pod name> ls /var/run/secrets/kubernetes.io/serivceaccount
+
