@@ -4,17 +4,13 @@ metadata:
   name: webapp
 spec:
   containers:
-  - name: event-simulator
-    image: kodekloud/event-simulator
-    env:
-    - name: LOG_HANDLERS
-      value: file
+  - image: kodekloud/event-simulato
+    name: webapp
     volumeMounts:
     - mountPath: /log
-      name: log-volume
-
+      name: webapp
   volumes:
-  - name: log-volume
+  - name: webapp
     hostPath:
       # directory location on host
       path: /var/log/webapp
