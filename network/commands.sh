@@ -10,3 +10,10 @@ route
 #https://kubernetes.io/docs/concepts/cluster-administration/addons/
 #https://kubernetes.io/docs/concepts/cluster-administration/networking/#how-to-implement-the-kubernetes-networking-model
 #https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/high-availability/#steps-for-the-first-control-plane-node
+
+#Deploy weave
+kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
+
+ps -aux | grep kubelet | grep --color network-plugin=
+cat /opt/cni/bin
+ls /etc/cni/net.d/
