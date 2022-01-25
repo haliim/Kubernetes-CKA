@@ -7,6 +7,7 @@ cat /proc/sys/net/ipv4/ip_forward
 arp node01
 netstat -plnt
 route
+ipcalc | grep eth0
 #https://kubernetes.io/docs/concepts/cluster-administration/addons/
 #https://kubernetes.io/docs/concepts/cluster-administration/networking/#how-to-implement-the-kubernetes-networking-model
 #https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/high-availability/#steps-for-the-first-control-plane-node
@@ -16,4 +17,5 @@ kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl versio
 
 ps -aux | grep kubelet | grep --color network-plugin=
 cat /opt/cni/bin
-ls /etc/cni/net.d/
+cd /etc/cni/net.d/
+kubectl get pods -n kube-system
