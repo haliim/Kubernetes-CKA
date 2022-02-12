@@ -1,0 +1,5 @@
+cat <<EOF >>./kustomization.yaml
+resources:
+  - wp-mysql.yaml
+  - wp.yaml
+EOF
